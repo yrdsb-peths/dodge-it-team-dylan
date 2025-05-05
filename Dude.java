@@ -14,10 +14,18 @@ public class Dude extends Actor
      */
     public void act()
     {
-        if(Greenfoot.isKeyDown("s")) {
-            setLocation(getX(), getY() + 3);
-        } else if(Greenfoot.isKeyDown("w")) {
-            setLocation(getX(), getY() - 3);
+        if(isTouching(Rocket.class)) {
+            removeTouching(Rocket.class);
+            
+            Gameover doneFor = new Gameover();
+            getWorld().addObject(doneFor, 400, 150);
+            Greenfoot.stop();
+        } else {
+            if(Greenfoot.isKeyDown("s")) {
+                setLocation(getX(), getY() + 5);
+            } else if(Greenfoot.isKeyDown("w")) {
+                setLocation(getX(), getY() - 5);
+            }   
         }
     }
 }
