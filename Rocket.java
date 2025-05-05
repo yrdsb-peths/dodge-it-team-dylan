@@ -12,7 +12,7 @@ public class Rocket extends Actor
      * Act - do whatever the Rocket wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public int initial = 5;
+    public int initial = 8;
     public int counter = 0;
     
     public void act()
